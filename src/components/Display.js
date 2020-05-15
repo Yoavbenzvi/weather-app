@@ -29,10 +29,10 @@ const Display = ({ data, display }) => {
    						icon={data.current.weather[0].description}
    					/>
    				</div>
-   			)
+   			);
    		case('hourly'):
             return(
-                  <div className='box w-full flex flex-wrap overflow-scroll'>
+                  <div className='box w-full flex flex-wrap'>
                      {data.hourly.slice(0, 12).map((day, i) => <Card
                         icon={day.weather[0].main}
                         max={day.temp}
@@ -41,7 +41,7 @@ const Display = ({ data, display }) => {
                         key={i}
                      />)}
                   </div>
-            )
+            );
    		case('daily'):
    			return(
                   <div className='box w-full flex flex-wrap overflow-scroll'>
@@ -53,11 +53,11 @@ const Display = ({ data, display }) => {
                         key={i}
                      />)}
                   </div>
-   			)
+   			);
    		default:
    			return(
                null
-   			)
+   			);
    	}
    }
 
@@ -68,7 +68,7 @@ const Display = ({ data, display }) => {
 			</div>
 		)
    } else {
-   	return null
+   	return null;
    }
 }
 

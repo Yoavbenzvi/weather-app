@@ -6,21 +6,13 @@ import Display from './components/Display';
 
 class App extends React.Component {
    constructor() {
-      super()
+      super();
 
       this.state = {
          display: 'hourly',
-         //current
-         //hourly
-         //daily
          data: null
-         //.current.temp = temperature
-         //.timezone = location
-         //.daily = array
-         //.hourly = array
       }
    }
-
 
    componentDidMount() {
       const fetchWeather = (lon, lat) => {
@@ -29,7 +21,7 @@ class App extends React.Component {
          .then(data => this.setState({ data }))
       }
 
-     navigator.geolocation.getCurrentPosition(results => console.log(fetchWeather(results.coords.longitude, results.coords.latitude)))
+      navigator.geolocation.getCurrentPosition(results => console.log(fetchWeather(results.coords.longitude, results.coords.latitude)));
    }
 
    changeDisplay = (display) => this.setState({display});
@@ -44,12 +36,10 @@ class App extends React.Component {
      return(
        <div className='w-full p-8 text-white'>
          <div className='con w-4/5 mx-auto shadow-2xl rounded-lg flex'>
-         {/*left*/}
             <div className='rounded-l-lg bg-gray-700 w-1/4 p-3'>
                {this.svg()}
                <Clock location={this.state.data ? this.state.data.timezone : null}/>
             </div>
-         {/*right*/}
             <div className='bg-gray-900 w-3/4 rounded-r-lg'>
                <div className='flex justify-around p-4'>
                   <Selectors changeDisplay={this.changeDisplay} display={this.state.display}/>
@@ -58,7 +48,7 @@ class App extends React.Component {
             </div>
          </div>
        </div>
-     )
+     );
    }
 }
 

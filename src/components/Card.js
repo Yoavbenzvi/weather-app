@@ -1,7 +1,22 @@
 import React from 'react'
 
 const Card = ({ time, icon, max, min }) => {
-	
+
+	const getIcon = () => {
+      if(icon.includes("clear")) {
+         return "fas fa-sun";
+      } else if(icon.includes("rain")) {
+         return "fas fa-cloud-showers-heavy";
+      } else if(icon.includes("broken")) {
+         return "fas fa-cloud-sun";
+      } else if(icon.includes("snow")) {
+         return "fas fa-snowflake";
+      } else if(icon.includes("clouds")) {
+         return "fas fa-cloud";
+      } else {
+         return "fas fa-cloud";
+      }
+   }
    const kalvinToCelsiusHigh = (deg) => Math.ceil(deg-273.15);
 
    const kalvinToCelsiusLow = (deg) => Math.floor(deg-273.15);
@@ -12,7 +27,7 @@ const Card = ({ time, icon, max, min }) => {
 				{time}
 			</div>
 			<div className='text-2xl'>
-				<i className='fas fa-cloud'/>
+				<i className={getIcon()}/>
 			</div>
 			<div>
 				<p className='text-lg'>
