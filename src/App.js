@@ -9,7 +9,7 @@ class App extends React.Component {
       super()
 
       this.state = {
-         display: 'daily',
+         display: 'hourly',
          //current
          //hourly
          //daily

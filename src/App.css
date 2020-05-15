@@ -7,5 +7,9 @@ body {
 }
 
 .display {
-	height: 80%;
+	height: 65vh;
+}
+
+.box {
+	height: 100%;
 }

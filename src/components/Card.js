@@ -7,8 +7,8 @@ const Card = ({ time, icon, max, min }) => {
    const kalvinToCelsiusLow = (deg) => Math.floor(deg-273.15);
 
 	return(
-		<div className='w-1/4 mx-auto bg-gray-800 text-center p-6 m-2 rounded-lg shadow-2xl'>
-			<div className='text-xl'>
+		<div className='w-1/4 bg-gray-800 text-center p-8 m-4 rounded-lg shadow-2xl'>
+			<div className='text-md text-center'>
 				{time}
 			</div>
 			<div className='text-2xl'>
